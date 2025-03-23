@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exam Dashboard</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/dashboard.css"/>
+    <style>
+    button img{
+        width: 40px;
+        height: 40px;
+    }
+    </style>
+
+    <style>
+    
+        
+    </style>
+        
+</head>
+<body>
+    <div class="sidebar">
+        <div class="logo">Logo</div>
+        <ul>
+            <li><a href="#">Dashboard</a></li>
+            <li><a href="#">Exams</a></li>
+            <li><a href="#">Register</a></li>
+            <li><a href="#">Reports</a></li>
+            <li><a href="#">Settings</a></li>
+            <li><a href="#">Sign out</a></li>
+        </ul>
+    </div>
+
+    <div class="main-content">
+        <div class="header">
+            <h2>Exam</h2>
+            <button id="createExam">+ Create Exam</button>
+        </div>
+
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Exams</th>
+                    <th>Value</th>
+                    <th>Question</th>
+                    <th>Time Remains</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Biology</td>
+                    <td>100</td>
+                    <td>26</td>
+                    <td>6:05:32</td>
+                    <form id="editForm">
+                    <td >
+                        <button class="edit-btn" id="edit-btn"><img src="picture/edit.png"></button>
+                        <button><img src="picture/delete.png"></button>
+                    </td>
+                    </form>
+                </tr>
+    
+            
+            </tbody>
+        </table>
+
+    </div>
+<div id="popup" class="popup">
+        <div class="popup-content">
+            <h3>Edit Row</h3>
+            <form id="editForm">
+                <label for="exam">Exams:</label>
+                <input type="text" id="exam" name="exam"><br><br>
+                <label for="value">Value:</label>
+                <input type="number" id="value" name="value"><br><br>
+                <label for="question">Question:</label>
+                <input type="number" id="question" name="question"><br><br>
+                <label for="time">Time Remains:</label>
+                <input type="text" id="time" name="time"><br><br>
+                <button type="button" id="saveBtn">Save</button>
+                <button type="button" id="closeBtn">Close</button>
+            </form>
+        </div>
+    </div>
+    <script src="js/jquery-3.7.1.min.js"></script>
+    <script>
+     document.getElementById("edit-btn").addEventListener("click", function (event) {
+            event.preventDefault(); // Prevent the form from submitting
+            console.log("Default action prevented!");
+        });
+        $(document).ready(function() {
+            $('#createExam').on('click', function() {
+                alert('Create Exam button clicked!');
+            });
+
+            $('.actions button').on('click', function() {
+                const action = $(this).text();
+                const examName = $(this).closest('tr').find('td:first').text();
+                alert(`${action} action for ${examName}`);
+            });
+        });
+    </script>
+    <script>
+        $(document).ready(function () {
+    let selectedRow;
+
+    // Open popup and populate fields
+    $(".edit-btn").on("click", function () {
+        selectedRow = $(this).closest("tr");
+        $("#exam").val(selectedRow.find("td:eq(0)").text());
+        $("#value").val(selectedRow.find("td:eq(1)").text());
+        $("#question").val(selectedRow.find("td:eq(2)").text());
+        $("#time").val(selectedRow.find("td:eq(3)").text());
+        $("#popup").fadeIn();
+    });
+
+    // Save changes
+    $("#saveBtn").on("click", function () {
+        if (selectedRow) {
+            selectedRow.find("td:eq(0)").text($("#exam").val());
+            selectedRow.find("td:eq(1)").text($("#value").val());
+            selectedRow.find("td:eq(2)").text($("#question").val());
+            selectedRow.find("td:eq(3)").text($("#time").val());
+        }
+        $("#popup").fadeOut();
+    });
+
+    // Close popup
+    $("#closeBtn").on("click", function () {
+        $("#popup").fadeOut();
+    });
+});
+
+    </script>
+</body>
+</html>

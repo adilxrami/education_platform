@@ -1,0 +1,153 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f9f9f9;
+}
+
+.quiz-dashboard {
+    display: flex;
+    height: 100vh;
+}
+
+.sidebar {
+    width: 250px;
+    background-color: #2ebac6;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+max-height: 100%;
+}
+
+.sidebar .header {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.sidebar ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.sidebar ul li {
+    padding: 10px;
+    cursor: pointer;
+}
+.sidebar ul li.active,
+.sidebar ul li:hover {
+    background-color: #1d9ea6;
+    border-radius: 8px;
+}
+.sidebar ul li div{
+    display: inline;
+position: absolute;
+top: 12%;
+}
+.sidebar ul li span{
+    margin-left: 25px;
+    margin-top: 10%;
+}
+
+
+
+.logout {
+    margin-top: auto;
+    cursor: pointer;
+    text-align: center;
+    color: white;
+    position: relative;
+    bottom: 12%;
+    right: 15%;
+}
+
+main {
+    flex: 1;
+    padding: 20px;
+}
+
+.top-bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.top-bar input {
+    width: 60%;
+    padding: 10px;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+}
+
+.top-bar .start-quiz {
+    background-color: #2ebac6;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.user-profile {
+    display: flex;
+    align-items: center;
+}
+
+.user-profile .profile-icon {
+    background-color: #f0f0f0;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+}
+
+.quiz-section {
+    background: white;
+    border-radius: 12px;
+    padding: 60px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.quiz-content {
+    display: flex;
+    gap: 20px;
+    margin-bottom: 20px;
+}
+
+.quiz-image {
+    width: 150px;
+    height: 150px;
+    border-radius: 8px;
+    object-fit: cover;
+}
+
+.question {
+    flex: 1;
+}
+
+.options {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.options label {
+    font-size: 16px;
+}
+
+.submit-btn {
+    background-color: #2ebac6;
+    color: white;
+    border: none;
+    margin: 10px;
+    padding: 10px 20px;
+    border-radius: 8px;
+    cursor: pointer;
+    float: right;
+
+}

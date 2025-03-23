@@ -1,0 +1,33 @@
+<?php
+session_start();
+
+// Check if the exam duration is set in the POST data
+if (isset($_POST['exam_duration'])) {
+    // Store the exam duration and start time in the session
+    $_SESSION['exam_duration'] = intval($_POST['exam_duration']);
+    $_SESSION['start_time'] = time(); // Record the start time
+}
+
+// Redirect to the quiz page
+header("Location: quiz.php");
+exit();
+
+
+// Initialize remaining time with a default value
+$remainingTime = 0;
+
+// Calculate the remaining time if session variables are set
+if (isset($_SESSION['start_time']) && isset($_SESSION['exam_duration'])) {
+    $elapsedTime = time() - $_SESSION['start_time'];
+    $remainingTime = $_SESSION['exam_duration'] * 60 - $elapsedTime; // Convert to seconds
+
+    // Ensure remaining time is not negative
+    if ($remainingTime < 0) {
+        $remainingTime = 0;
+    }
+}
+
+// Return the remaining time as JSON
+header('Content-Type: application/json');
+echo json_encode(['remainingTime' => $remainingTime]);
+?>

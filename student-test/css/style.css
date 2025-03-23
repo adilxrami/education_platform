@@ -1,0 +1,99 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f9;
+    color: #333;
+}
+
+h1, h2 {
+    text-align: center;
+    color: #444;
+}
+
+form {
+    max-width: 400px;
+    margin: 20px auto;
+    padding: 20px;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+input, select, button {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-sizing: border-box;
+    margin-top: 13px;
+}
+
+
+button {
+    background-color: #50B4C8;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #27aac4;
+}
+
+.switch-link {
+    text-align: center;
+    margin-top: -10px;
+    margin-bottom: 15px;
+}
+
+.switch-link a {
+    text-decoration: none;
+    color: #007BFF;
+}
+
+.switch-link a:hover {
+    text-decoration: underline;
+}
+/*//////////////////////////////*/
+.text-center{
+    text-align: center;
+}
+.box.adil{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: lightblue; /* For visibility */
+    border-radius: 8px;
+   background-size: cover;
+    background-image: url(../picture/signe.png);
+    background-repeat: no-repeat;
+   max-height: 300px;
+   max-width: 700px;
+   
+}
+.container {
+    display: flex;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.box{
+flex: 1;
+border: 2px sold #ff0; 
+box-sizing: border-box
+}
+.box:nth-child(1) {
+    flex: 6; /* 70% width */
+}
+
+.box:nth-child(2) {
+    flex: 4; /* 30% width */
+}

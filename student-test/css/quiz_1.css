@@ -1,0 +1,112 @@
+
+.logout1 {
+    position: relative;
+    bottom: 10%;
+}
+.icon1 {
+    position: relative;
+    bottom: 20%;
+}
+.icon2 {
+    position: absolute;
+    top: 20%;
+}
+.navigation-buttons {
+    margin-top: 20px;
+}
+.navigation-buttons button {
+    margin: 0 10px;
+    padding: 10px 20px;
+    font-size: 16px;
+    float: right;
+}
+.navigation-buttons button {
+    background-color: #2ebac6;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.search-btn {
+    background-color: #2ebac6;
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.navigation-buttons button:hover {
+    background-color: #1d9ea6;
+}
+.question-numbers {
+    margin: 20px 0;
+    text-align: center;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+    justify-content: center;
+}
+
+.question-numbers a {
+    margin: 0;
+    padding: 10px 15px;
+    text-decoration: none;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    background-color: #f0f0f0;
+    color: #000;
+    font-size: 14px;
+    display: inline-block;
+    transition: background-color 0.2s, color 0.2s;
+}
+
+.question-numbers a.active {
+    background-color: #007bff;
+    color: #fff;
+    font-weight: bold;
+}
+
+.question-numbers a:hover {
+    background-color: #0056b3;
+    color: #fff;
+}
+
+@media (max-width: 600px) {
+    .question-numbers a {
+        font-size: 12px;
+        padding: 8px 10px;
+    }
+}
+
+@media (max-width: 400px) {
+    .question-numbers a {
+        font-size: 10px;
+        padding: 5px 8px;
+    }
+}
+
+.question-numbers {
+    margin: 20px 0;
+    text-align: center;
+}
+.question-numbers a {
+    margin: 0 5px;
+    padding: 8px 12px;
+    text-decoration: none;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    background-color: #f0f0f0;
+    color: #000;
+    font-size: 14px;
+}
+.question-numbers a.active {
+    background-color: #007bff;
+    color: #fff;
+}
+
+.timer {
+    font-size: 20px;
+    color: red;
+    text-align: right;
+    margin-top: 10px;
+}
